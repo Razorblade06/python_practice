@@ -1,3 +1,4 @@
+import random
 '''print("Hello World")
 name = "Aarush Kadam"
 print(name)
@@ -51,7 +52,7 @@ print(rn.count(20))
 dict1 = {"name": "Aarush", "age": 20}
 print(dict1)
 print(dict1.keys())
-print(dict1.values())'''
+print(dict1.values())
 
 def add():
     num1 = input("Enter first number: ")
@@ -59,3 +60,30 @@ def add():
     sum = int(num1) + int(num2)
     print("The sum is:", sum)
 add()
+
+for i in range(4):
+    print(i)
+
+for i in range(2, 10, 2):
+    print(i)
+
+while True:
+    print("Your PC is hacked")'''
+
+RandomNumber = random.randint(1, 10)
+attempts = 3
+while attempts > 0:
+    guess = int(input("Guess the number between 1 and 10: "))
+    if guess == RandomNumber:
+        print("Congratulations! You've guessed the number.")
+        break
+    elif RandomNumber>guess:
+        print("You have guessed the wrong number.")
+        print("Random Number is greater than your guess.")
+    elif RandomNumber<guess:
+        print("You have guessed the wrong number.")
+        print("Random Number is less than your guess.")
+    attempts-=1
+    print(f"You have {attempts} attempts left.")
+if guess!=RandomNumber:
+    print(f"Sorry, the correct number was {RandomNumber}.")
