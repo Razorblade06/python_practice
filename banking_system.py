@@ -10,9 +10,12 @@ def deposit():
 def withdraw():
     global balance
     withdraw_amount = int(input("Enter the amount that you want to withdraw: "))
-    balance -= withdraw_amount
-    print(f"The balance of your account is {balance} after withdrawing.")
-    passbook.append(f"{withdraw_amount} was withdrawn from the account.")
+    if balance > withdraw_amount:
+        balance -= withdraw_amount
+        print(f"The balance of your account is {balance} after withdrawing.")
+        passbook.append(f"{withdraw_amount} was withdrawn from the account.")
+    else:
+        print("Insufficient Balance.")
 
 def check_balance():
     global balance
@@ -30,6 +33,7 @@ options = """1.Deposit Amount
 5.Exit"""
 tocontinue = True
 while tocontinue == True:
+    name = str(input("Enter your name: "))
     print(options)
     choice = int(input("Enter your choice from the above options: "))
     if choice == 1:
